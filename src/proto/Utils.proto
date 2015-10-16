@@ -1,0 +1,19 @@
+option optimize_for = SPEED;
+
+package rvn.utils;
+
+enum ResponseCodeE {
+	RESP_SUCCESS                          = 0;
+	RESP_ERROR                            = 1;
+	RESP_REALMNOTFOUND                    = 2;
+	RESP_REALMEXISTS                      = 3;
+	RESP_MAPNOTFOUND                      = 4;
+};
+
+message VoidT {
+}
+
+message AttrT {
+	optional string name                  = 1;
+	optional string value                 = 2;
+}

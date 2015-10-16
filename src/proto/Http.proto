@@ -1,0 +1,27 @@
+option optimize_for = SPEED;
+
+import "Utils.proto";
+
+package rvn.http;
+
+message RequestT {
+	optional string id                 = 1;
+	repeated rvn.utils.AttrT headers   = 2;
+	optional string uri                = 3;
+	optional string body               = 4;
+}
+
+message ResponseT {
+	optional string id                 = 1;
+	repeated rvn.utils.AttrT headers   = 2;
+	optional string uri                = 3;
+	optional string body               = 4;
+	optional rvn.utils.ResponseCodeE response	= 5;
+}
+
+// services
+
+service HttpServiceSkel {
+	rpc Query(RequestT) returns(ResponseT);
+}
+

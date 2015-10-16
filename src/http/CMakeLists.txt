@@ -1,0 +1,14 @@
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+set(APOPHNIAPP_HTTP_SOURCES
+	WebServer.cc
+)
+
+if (APOPHNIAPP_BUILD_WITH_SSL)
+set(APOPHNIAPP_HTTP_SOURCES
+	${APOPHNIAPP_HTTP_SOURCES}
+	SecureWebServer.cc
+)
+endif()
+
+add_library(apn_http STATIC ${APOPHNIAPP_HTTP_SOURCES})
